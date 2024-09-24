@@ -1,5 +1,5 @@
 # conversation_history_app
-The conversation_history app allows users to leave a comment, and change the status of the project. This repo host the app. 
+The conversation_history app allows users to create a project, leave comments, and change the status of the project. This repo host the app. 
 
 ## Built With
 
