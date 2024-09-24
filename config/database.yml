@@ -3,24 +3,26 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: ericsson
-  password: Enabric123#  # You can leave this empty if there's no password
-  host: localhost
+  
 
 development:
   <<: *default
   database: conversation_history_db_development
+  username: ericsson
+  password: 'Enabric123#' 
+  host: localhost
+  port: 5432
 
 test:
   <<: *default
   database: conversation_history_db_test
+  host: localhost
+  username: ericsson
+  password: 'Enabric123#'
+  port: 5432
 
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
 
-# production:
-#   <<: *default
-#   database: conversation_history_db_production
-#   username: <%= ENV['POSTGRES_USER'] %>
-#   password: <%= ENV['POSTGRES_PASSWORD'] %>
+
