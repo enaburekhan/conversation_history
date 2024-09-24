@@ -22,7 +22,7 @@ default: &default
 development:
   <<: *default
   database: conversation_history_db_development
-  host: 127.0.0.1
+  host: localhost
   username: ericsson
   password: 'Enabric123#'
   port: 5432
@@ -43,7 +43,7 @@ development:
 test:
   <<: *default
   database: conversation_history_db_test
-  host: 127.0.0.1
+  host: localhost
   username: ericsson
   password: 'Enabric123#'
   port: 5432
