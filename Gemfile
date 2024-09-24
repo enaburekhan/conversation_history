@@ -80,4 +80,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
 end

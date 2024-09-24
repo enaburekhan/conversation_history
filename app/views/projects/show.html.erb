@@ -1,0 +1,26 @@
+<h1><%= @project.name %></h1>
+<p><%= @project.description %></p>
+<p>Status: <%= @project.status %></p>
+
+<h2>Comments</h2>
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <%= comment.user.email %>: <%= comment.body %>
+    </li>
+  <% end %>
+</ul>
+
+<% if user_signed_in? %>
+  <%= form_with(model: [ @project, @comment ], local: true) do |form| %>
+    <div>
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </div>
+    <div>
+      <%= form.submit "Add Comment" %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Please <%= link_to 'sign in', new_user_session_path %> to comment.</p>
+<% end %>

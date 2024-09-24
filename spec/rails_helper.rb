@@ -72,4 +72,10 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+
+  config.include Devise::Test::IntegrationHelpers, type: :request
+end
+
 end
