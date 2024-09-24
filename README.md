@@ -7,6 +7,8 @@ The conversation_history app allows users to create a project, leave comments, a
 - Rails "~> 7.0.6"
 - Devise for user authentication
 - rspec-rails
+- tailwind css
+- css bootstrap
 
 
 ### Project features
