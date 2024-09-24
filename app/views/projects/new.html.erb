@@ -1,0 +1,22 @@
+<h1>Create a New Project</h1>
+
+<%= form_with model: @project, local: true do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :status %>
+    <%= f.select :status, ['pending', 'active', 'completed'] %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Project" %>
+  </div>
+<% end %>

@@ -7,9 +7,16 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to @project, notice: 'Comment was successfully created.'
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to @project, notice: 'Comment was successfully created.' }
+      end 
+      
     else
-      redirect_to @project, alert: 'Comment could not be created'  
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("comments", partial: "comments/form", locals: { comment: @comment }) }
+        format.html { redirect_to @project, alert: 'Comment could not be created.' }
+      end  
     end
   end
 

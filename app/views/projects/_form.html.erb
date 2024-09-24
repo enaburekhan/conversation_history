@@ -1,0 +1,6 @@
+<%= form_with model: project, local: true, url: project_path(project), method: :patch do |f| %>
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select([['Pending', 'pending'], ['Active', 'active'], ['Completed', 'completed']], project.status) %>
+    <%= f.submit 'Update Status' %>
+  <% end %>
+  

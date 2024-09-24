@@ -1,0 +1,7 @@
+<div id="project_<%= project.id %>">
+  <h2><%= project.name %></h2>
+  <p><%= project.description %></p>
+  <p>Status: <%= project.status %></p>
+
+  <%= render 'projects/form', project: project %> <!-- Include the form partial -->
+</div>

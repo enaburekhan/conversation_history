@@ -1,15 +1,20 @@
 <h1><%= @project.name %></h1>
 <p><%= @project.description %></p>
-<p>Status: <%= @project.status %></p>
+
+<h2>Status: <%= @project.status %></h2>
+
+<%= form_with model: @project, local: true, url: project_path(@project), method: :patch do |f| %>
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select([['Pending', 'pending'], ['Active', 'active'], ['Completed', 'completed']], @project.status) %>
+  <%= f.submit 'Update Status' %>
+<% end %>
+
 
 <h2>Comments</h2>
-<ul>
-  <% @comments.each do |comment| %>
-    <li>
-      <%= comment.user.email %>: <%= comment.body %>
-    </li>
-  <% end %>
-</ul>
+
+<turbo-frame id="comments">
+  <%= render @project.comments %>
+</turbo-frame>
 
 <% if user_signed_in? %>
   <%= form_with(model: [ @project, @comment ], local: true) do |form| %>

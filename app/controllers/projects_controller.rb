@@ -29,7 +29,10 @@ class ProjectsController < ApplicationController
 
     def update
       if @project.update(project_params)
-        redirect_to @project, notice: "Project was successfully updated."
+        respond_to do |format|
+          format.turbo_stream { render turbo_stream: turbo_stream.replace(@project, partial: "projects/project", locals: { project: @project }) }
+          format.html { redirect_to @project, notice: 'Project status was sucessfully updated.' }
+        end
       else
         render :edit  
       end    

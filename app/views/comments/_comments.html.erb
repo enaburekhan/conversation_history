@@ -1,0 +1,5 @@
+<turbo-frame id="comments">
+  <%= @project.comments.each do |comment| %>
+    <%= render comment %>
+  <% end %>
+</turbo-frame>
