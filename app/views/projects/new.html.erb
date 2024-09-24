@@ -1,22 +1,26 @@
-<h1>Create a New Project</h1>
+<h1 class="text-3xl font-bold mb-6">Create a New Project</h1>
 
-<%= form_with model: @project, local: true do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<%= form_with model: @project, local: true, class: "space-y-6" do |f| %>
+  <!-- Project Name -->
+  <div class="flex flex-col">
+    <%= f.label :name, class: "mb-2 font-medium text-lg" %>
+    <%= f.text_field :name, class: "px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500" %>
   </div>
 
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <!-- Project Description -->
+  <div class="flex flex-col">
+    <%= f.label :description, class: "mb-2 font-medium text-lg" %>
+    <%= f.text_area :description, class: "px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500" %>
   </div>
 
-  <div>
-    <%= f.label :status %>
-    <%= f.select :status, ['pending', 'active', 'completed'] %>
+  <!-- Project Status -->
+  <div class="flex flex-col">
+    <%= f.label :status, class: "mb-2 font-medium text-lg" %>
+    <%= f.select :status, ['pending', 'active', 'completed'], {}, class: "px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500" %>
   </div>
 
+  <!-- Submit Button -->
   <div>
-    <%= f.submit "Create Project" %>
+    <%= f.submit "Create Project", class: "btn btn-primary" %>
   </div>
 <% end %>

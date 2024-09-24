@@ -1,23 +1,25 @@
-<h1>Projects</h1>
-<%= link_to 'New Project', new_project_path %>
+<h1 class="text-2xl font-semibold text-center my-8">Projects</h1>
 
-<div data-controller="hello">
+<div class="flex justify-end mb-8">
+  <%= link_to 'New Project', new_project_path, class: "bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out" %>
 </div>
 
-<div id="hello-content" style="display: none;">
-  <h1 class="font-bold text-4xl">Welcome to Conversation History</h1>
+<div class="text-center mb-8">
+  <h1 class="font-bold text-4xl mb-4">Welcome to Conversation History</h1>
   <% if user_signed_in? %> 
-   <div> Welcome <%= current_user.email %> </div> 
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+    <div class="mb-4 text-lg">Welcome, <%= current_user.email %></div>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "bg-red-500 text-white font-semibold py-2 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out" %> 
   <% else %>
-    <%= button_to "Sign in", new_user_session_path %> 
+    <%= button_to "Sign in", new_user_session_path, class: "bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300 ease-in-out" %> 
   <% end %>
 </div>
 
-<ul>
+<ul class="space-y-4">
   <% @projects.each do |project| %>
-    <li>
-      <%= link_to project.name, project %> - Status: <%= project.status %>
+    <li class="bg-gray-100 p-4 rounded shadow-lg hover:bg-gray-200 transition duration-300 ease-in-out">
+      <%= link_to project.name, project, class: "text-blue-500 font-semibold hover:underline" %> 
+      <span class="text-gray-600">- Status: <%= project.status %></span>
     </li>
   <% end %>
 </ul>
+
