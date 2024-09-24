@@ -21,7 +21,7 @@ default: &default
 
 development:
   <<: *default
-  database: techBook_app_development
+  database: conversation_history_db_development
   host: localhost
   username: ericsson
   password: 'Enabric123#'
@@ -42,7 +42,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: techBook_app_test
+  database: conversation_history_db_test
   host: localhost
   username: ericsson
   password: 'Enabric123#'
