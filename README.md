@@ -38,7 +38,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup   
 
-The project repository can be found in [GitHub link](https://github.com/enaburekhan/conversation_history.git) or just clone the project using this command.
+The project repository can be found in [GitHub link](https://github.com/enaburekhan/conversation_history.git) or just clone the project using the giving link.
 
 
 Open terminal on your workspace with
