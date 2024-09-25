@@ -1,9 +1,11 @@
 <h1><%= @project.name %></h1>
 <p><%= @project.description %></p>
 
+<turbo-frame id="project_status">
 <h2>Status: <%= @project.status %></h2>
+</turbo-frame>
 
-<%= form_with model: @project, local: true, url: project_path(@project), method: :patch do |f| %>
+<%= form_with model: @project, url: project_path(@project), method: :patch do |f| %>
   <%= f.label :status %>
   <%= f.select :status, options_for_select([['Pending', 'pending'], ['Active', 'active'], ['Completed', 'completed']], @project.status) %>
   <%= f.submit 'Update Status' %>
@@ -17,7 +19,7 @@
 </turbo-frame>
 
 <% if user_signed_in? %>
-  <%= form_with(model: [ @project, @comment ], local: true) do |form| %>
+  <%= form_with(model: [ @project, @comment ]) do |form| %>
     <div>
       <%= form.label :body %><br>
       <%= form.text_area :body %>
@@ -25,7 +27,7 @@
     <div>
       <%= form.submit "Add Comment" %>
     </div>
-  <% end %>
+<% end %>
 <% else %>
   <p>Please <%= link_to 'sign in', new_user_session_path %> to comment.</p>
 <% end %>
