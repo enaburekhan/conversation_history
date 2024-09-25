@@ -3,7 +3,7 @@ The conversation_history app allows users to create a project, leave comments, a
 
 ## Screenshot
 
-![conversation-history-app](https://github.com/user-attachments/assets/f34c31c6-e601-4e23-9fd1-da7c8e016e7e)
+![conversation-history-app](https://github.com/user-attachments/assets/b7f4cdec-530f-40be-a1f8-e81d8563fe9f)
 
 ## Built With
 
@@ -12,7 +12,6 @@ The conversation_history app allows users to create a project, leave comments, a
 - Devise for user authentication
 - rspec-rails
 - tailwind css
-- css bootstrap
 
 
 ### Project features
@@ -20,7 +19,7 @@ The conversation_history app allows users to create a project, leave comments, a
 - A user can signup and login
 - A logged in user can create projects and add comments to each project
 - A logged in user can update the status of a project
-- A logged in user can show lists of projects.
+- A user can show lists of projects.
 
 ### Questions to Clarify
 
@@ -34,7 +33,7 @@ The conversation_history app allows users to create a project, leave comments, a
 
 ## APP endpoint 
 
-[conversation-history-app]()
+[conversation-history-app](https://desolate-bayou-50319-944228cd7202.herokuapp.com/)
 
 ## Getting Started
 
