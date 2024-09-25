@@ -1,6 +1,10 @@
 # conversation_history_app
 The conversation_history app allows users to create a project, leave comments, and change the status of the project. This repo host the app. 
 
+## Screenshot
+
+![conversation-history-app](https://github.com/user-attachments/assets/f34c31c6-e601-4e23-9fd1-da7c8e016e7e)
+
 ## Built With
 
 - ruby "3.3.1"
