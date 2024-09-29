@@ -17,12 +17,12 @@
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <!-- Brand Logo -->
-        <div class="absolute inset-y-0 left-0 flex items-center">
+        <div class="flex items-center">
           <a href="#" class="text-2xl font-bold text-gray-800">ConversationHistory</a>
         </div>
 
         <!-- Links Section for Large Screens -->
-        <div class="hidden sm:block sm:ml-6">
+        <div class="hidden sm:block ml-auto">
           <div class="flex space-x-4">
             <%= link_to 'Projects', projects_path, class: "text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" %>
             <% if user_signed_in? %>
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Mobile Menu (Hidden by default, visible when toggled) -->
-    <div class="hidden sm:hidden" id="mobile-menu">
+    <div class="hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <%= link_to 'Projects', projects_path, class: "block text-gray-800 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium" %>
         <% if user_signed_in? %>
@@ -73,10 +73,12 @@
 
   <!-- JavaScript for Toggling the Mobile Menu -->
   <script>
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-    }
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const isExpanded = mobileMenu.classList.toggle('hidden');
+    const toggleButton = document.querySelector('[aria-controls="mobile-menu"]');
+    toggleButton.setAttribute('aria-expanded', !isExpanded);
+  }  
   </script>
 </body>
 </html>
