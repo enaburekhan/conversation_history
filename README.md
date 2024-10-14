@@ -3,7 +3,7 @@ The conversation_history app allows users to create a project, leave comments, a
 
 ## Screenshot
 
-![conversation-history-app](https://github.com/user-attachments/assets/b7f4cdec-530f-40be-a1f8-e81d8563fe9f)
+![conversation-history-app](https://github.com/user-attachments/assets/ed60f571-e7f5-4eb2-9674-03ddda53649e)
 
 ## Built With
 
