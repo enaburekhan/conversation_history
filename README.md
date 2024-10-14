@@ -95,7 +95,6 @@ You can verify that the remote was added to your project by running:
 ### Migrate your database
 
 heroku run rails db:migrate
-heroku run rails db:seed
 
 ### Tools used on this project
 - Visual Studio Code
